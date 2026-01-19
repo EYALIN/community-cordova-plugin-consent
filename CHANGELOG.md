@@ -2,6 +2,14 @@
 
 All notable changes to this project will be documented in this file.
 
+## [3.0.1] - 2026-01-18
+
+### Changed
+- Updated iOS GoogleUserMessagingPlatform pod version from `~> 2.5.0` to `~> 3.1.0` (latest version)
+
+### Fixed
+- Fixed CocoaPods version conflict when using alongside Google Mobile Ads SDK which bundles GoogleUserMessagingPlatform 3.x
+
 ## [1.0.0] - 2025-01-17
 
 ### Initial Release
