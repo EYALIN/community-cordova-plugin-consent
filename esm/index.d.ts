@@ -39,8 +39,8 @@ export declare class Consent {
     trackingAuthorizationStatus(): Promise<TrackingAuthorizationStatus | false>;
     requestTrackingAuthorization(): Promise<TrackingAuthorizationStatus | false>;
     getConsentStatus(): Promise<ConsentStatus>;
-    canRequestAds(): Promise<Boolean>;
-    privacyOptionsRequirementStatus(): Promise<unknown>;
+    canRequestAds(): Promise<boolean>;
+    privacyOptionsRequirementStatus(): Promise<PrivacyOptionsRequirementStatus>;
     loadAndShowIfRequired(): Promise<unknown>;
     showPrivacyOptionsForm(): Promise<unknown>;
     getFormStatus(): Promise<FormStatus>;

@@ -150,7 +150,7 @@ var Consent = /** @class */ (function () {
                     case 0: return [4 /*yield*/, execAsync(NativeActions.privacyOptionsRequirementStatus)];
                     case 1:
                         n = _a.sent();
-                        return [2 /*return*/, n];
+                        return [2 /*return*/, PrivacyOptionsRequirementStatus[PrivacyOptionsRequirementStatus[n]]];
                 }
             });
         });

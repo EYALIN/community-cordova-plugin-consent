@@ -86,13 +86,13 @@ export class Consent {
     return ConsentStatus[ConsentStatus[n as number]]
   }
 
-  public async canRequestAds():Promise<Boolean>  {
+  public async canRequestAds(): Promise<boolean>  {
     const n = await execAsync(NativeActions.canRequestAds)
     return n as boolean;
   }
-  public async privacyOptionsRequirementStatus()  {
+  public async privacyOptionsRequirementStatus(): Promise<PrivacyOptionsRequirementStatus>  {
     const n = await execAsync(NativeActions.privacyOptionsRequirementStatus)
-    return n;
+    return PrivacyOptionsRequirementStatus[PrivacyOptionsRequirementStatus[n as number]]
   }
   public loadAndShowIfRequired()  {
     const n =  execAsync(NativeActions.loadAndShowIfRequired)

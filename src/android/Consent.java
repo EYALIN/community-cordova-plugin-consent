@@ -111,9 +111,20 @@ public class Consent extends CordovaPlugin {
         return true;
     }
 
+    private int getPrivacyOptionsRequirementStatus() {
+        ConsentInformation.PrivacyOptionsRequirementStatus status = getConsentInformation().getPrivacyOptionsRequirementStatus();
+        switch (status) {
+            case REQUIRED:
+                return 1;
+            case NOT_REQUIRED:
+                return 2;
+            default:
+                return 0;
+        }
+    }
+
     private boolean executePrivacyOptionsRequirementStatus(ExecuteContext ctx) {
-        ConsentInformation consentInformation = getConsentInformation();
-        String status = consentInformation.getPrivacyOptionsRequirementStatus().name();
+        int status = getPrivacyOptionsRequirementStatus();
         Log.d(TAG, "privacy status: " + status);
         ctx.callbackContext.success(status);
         return true;
@@ -121,8 +132,7 @@ public class Consent extends CordovaPlugin {
 
     private boolean executeCanRequestAds(ExecuteContext ctx) {
         ConsentInformation consentInformation = getConsentInformation();
-        String result = String.valueOf(consentInformation.canRequestAds());
-        ctx.callbackContext.success(result);
+        ctx.callbackContext.sendPluginResult(new PluginResult(PluginResult.Status.OK, consentInformation.canRequestAds()));
         return true;
     }
 

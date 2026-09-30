@@ -2,6 +2,13 @@
 
 All notable changes to this project will be documented in this file.
 
+## [3.0.3] - 2026-09-30
+
+### Fixed
+- `canRequestAds()` (Android) now returns a real boolean instead of a stringified `"true"`/`"false"`
+- `privacyOptionsRequirementStatus()` (Android) now returns the numeric `PrivacyOptionsRequirementStatus` enum value (0/1/2), mapped the same way `getConsentStatus()` maps its native status, instead of the raw native enum name string
+- Updated `Promise<PrivacyOptionsRequirementStatus>` / `Promise<boolean>` typings to match
+
 ## [3.0.1] - 2026-01-18
 
 ### Changed
